@@ -62,7 +62,7 @@ body { font-family: 'Inter', sans-serif; line-height: 1.6; background-color: var
 .product-card-small .price, .product-card-large .price { font-weight: 600; color: var(--primary-color); margin: 10px 0; }
 .person-card { background-color: rgba(255, 255, 255, 0.1); color: var(--text-light); text-align: center; padding: 30px 20px; }
 .person-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--secondary-color); margin-left: auto; margin-right: auto; }
-.attraction-card { position: relative; }
+.attraction-card { position: relative; height: 350px; }
 .attraction-card img { height: 100%; }
 .attraction-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: var(--text-light); }
 .tag { background-color: var(--secondary-color); color: var(--text-light); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; display: inline-block; }

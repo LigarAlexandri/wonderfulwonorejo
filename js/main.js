@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentIndex = 0;
         let isMoving = false;
         let autoPlayInterval = null;
+        let touchStartX = 0;
+        let touchMoveX = 0;
 
         const updatePosition = (transition = true) => {
             const slideWidth = slides[0].offsetWidth;
@@ -85,6 +87,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 move(-1);
             }
         });
+
+        // --- Touch Swipe Logic ---
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            stopAutoPlay();
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            touchMoveX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', () => {
+            if (touchStartX - touchMoveX > 50) {
+                move(1);
+            } else if (touchStartX - touchMoveX < -50) {
+                move(-1);
+            }
+            startAutoPlay();
+        });
+
 
         // Autoplay logic
         const startAutoPlay = () => {
