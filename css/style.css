@@ -1,21 +1,47 @@
+/* Glassmorphism Theme - Clean White & Professional by Gemini */
 :root {
-    --primary-color: #1E8449; /* Dark Green */
+    /* 1. New Color Palette for a White Background */
+    --primary-color: #1E8449; /* Professional Green */
     --secondary-color: #2ECC71; /* Lighter Green */
-    --accent-color: #F1C40F; /* Yellow for attention */
-    --bg-color: #FFFFFF;
-    --bg-light: #F8F9F9;
-    --text-color: #34495E;
+    --text-color: #34495E; /* Dark Slate Blue for text */
     --text-light: #FFFFFF;
+    --bg-color: #F8F9F9; /* Off-white for a softer look */
     --border-color: #EAEDED;
-    --card-bg: #FFFFFF;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    /* 2. Redefined Glassmorphism for a Light BG */
+    --glass-bg: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    --glass-border: rgba(0, 0, 0, 0.05);
+    --blur-effect: blur(8px);
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+
     --border-radius: 12px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; line-height: 1.6; background-color: var(--bg-color); color: var(--text-color); animation: fadeInPage 0.5s ease-in-out forwards; }
+
+/* 3. Set the Clean White Background */
+body { 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-color); 
+    animation: fadeInPage 0.5s ease-in-out forwards; 
+    background-color: var(--bg-color);
+}
+
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.header { background-color: var(--bg-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+
+/* 4. Apply the new Glass Header */
+.header { 
+    background: var(--glass-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; min-height: 70px; }
 .nav-logo img { height: 40px; border-radius: 50%; }
 .nav-menu { display: flex; justify-content: center; align-items: center; list-style: none; gap: 2rem; }
@@ -23,53 +49,64 @@ body { font-family: 'Inter', sans-serif; line-height: 1.6; background-color: var
 .nav-link:hover, .nav-link.active { color: var(--primary-color); }
 .hamburger { display: none; cursor: pointer; }
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--text-color); }
+
+/* 5. Restyle Buttons for High Contrast */
 .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; text-align: center; }
 .btn-primary { background-color: var(--primary-color); color: var(--text-light); }
 .btn-primary:hover { background-color: #145A32; transform: translateY(-2px); }
-.btn-secondary { background-color: var(--bg-color); color: var(--primary-color); }
+.btn-secondary { background-color: #FFFFFF; color: var(--primary-color); border-color: var(--border-color); }
 .btn-secondary:hover { background-color: var(--border-color); transform: translateY(-2px); }
 .btn-outline { background-color: transparent; color: var(--primary-color); border-color: var(--primary-color); }
 .btn-outline:hover { background-color: var(--primary-color); color: var(--text-light); transform: translateY(-2px); }
+
 .section-padding { padding: 80px 0; }
-.bg-light { background-color: var(--bg-light); }
-.bg-dark-green { background-color: var(--primary-color); }
+.section-title, .page-title { color: #2C3E50; } /* Darker title color */
 .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: 700; }
 .page-title { font-size: 3rem; margin-bottom: 30px; }
 .section-header-center { text-align: center; margin-bottom: 50px; }
-.text-white { color: var(--text-light); }
-.text-light-green { color: #A9DFBF; }
+.text-white { color: var(--text-light); } /* Use only on dark backgrounds */
 
 /* Carousel Styles */
 .carousel-container { position: relative; }
 .carousel-track-container { overflow: hidden; }
 .carousel-track { display: flex; gap: 30px; }
-.carousel-slide { flex-shrink: 0; width: calc((100% - 3 * 30px) / 4); } /* Default to 4 slides visible */
+.carousel-slide { flex-shrink: 0; width: calc((100% - 3 * 30px) / 4); } 
 .carousel-container .person-card.carousel-slide,
 .carousel-container .product-card-large.carousel-slide,
-.carousel-container .attraction-card.carousel-slide { width: calc((100% - 2 * 30px) / 3); } /* 3 slides visible for these */
+.carousel-container .attraction-card.carousel-slide { width: calc((100% - 2 * 30px) / 3); }
 .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(255, 255, 255, 0.9); border: 1px solid var(--border-color); width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 2; font-size: 1.5rem; color: var(--text-color); transition: all 0.3s ease; }
 .carousel-button:hover { background-color: var(--primary-color); color: white; }
 .carousel-button.prev { left: -22px; }
 .carousel-button.next { right: -22px; }
 
-/* Card Styles */
-.card { background-color: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; display: flex; flex-direction: column; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
+/* 6. Update Cards with the new Glass Effect */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+    
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); }
 .card img { width: 100%; height: 200px; object-fit: cover; }
 .card .card-content { padding: 20px; flex-grow: 1; }
-.treasure-card { text-align: center; }
-.treasure-card h3 { margin-top: 10px; }
-.product-card-small .price, .product-card-large .price { font-weight: 600; color: var(--primary-color); margin: 10px 0; }
-.person-card { background-color: rgba(255, 255, 255, 0.1); color: var(--text-light); text-align: center; padding: 30px 20px; }
+
+.product-card-small .price, .product-card-large .price { font-weight: 600; color: var(--primary-color); margin: 10px 0; font-size: 1.2rem; }
+
+/* Adjustments for specific cards */
+.person-card { text-align: center; padding: 30px 20px; color: var(--text-color); background: transparent; }
 .person-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--secondary-color); margin-left: auto; margin-right: auto; }
-.attraction-card { position: relative; height: 350px; }
+.attraction-card { position: relative; height: 350px; background: #fff; }
 .attraction-card img { height: 100%; }
 .attraction-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: var(--text-light); }
 .tag { background-color: var(--secondary-color); color: var(--text-light); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; display: inline-block; }
-
-/* Feature grid for products page */
-.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.feature-card { background-color: rgba(255, 255, 255, 0.1); color: var(--text-light); padding: 30px; border-radius: var(--border-radius); }
 
 /* Hero Sections */
 .hero-section { height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-align: center; position: relative; }
@@ -77,22 +114,34 @@ body { font-family: 'Inter', sans-serif; line-height: 1.6; background-color: var
 .hero-content { position: relative; z-index: 2; }
 .hero-title { font-size: 4rem; font-weight: 700; }
 .hero-subtitle { font-size: 1.5rem; margin-bottom: 30px; }
+
 .page-hero-section { padding: 80px 0; background-size: cover; background-position: center; }
-.page-hero-content { background-color: rgba(30, 132, 73, 0.85); padding: 40px; border-radius: var(--border-radius); color: var(--text-light); max-width: 800px; margin: 0 auto; text-align: center; }
+.page-hero-content {
+    background: rgba(30, 132, 73, 0.85); /* Keep dark hero content for readability on images */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 .page-hero-title { font-size: 2.5rem; }
 
 /* Contact Page */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-.contact-subtitle { margin-bottom: 30px; color: #566573; }
-.lets-talk-card { background-color: var(--bg-light); padding: 30px; border-radius: var(--border-radius); text-align: center; }
+.lets-talk-card, .contact-info-block {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
 .contact-right { display: flex; flex-direction: column; gap: 20px; }
-.contact-info-block { background-color: var(--bg-light); padding: 20px; border-radius: var(--border-radius); }
-.contact-info-block h3 { margin-bottom: 10px; }
+.contact-info-block h3 { margin-bottom: 10px; color: var(--primary-color); }
 .contact-info-block p { display: flex; align-items: center; gap: 10px; }
 .contact-info-block a { color: var(--primary-color); text-decoration: none; }
 
 /* Footer */
-.footer { background-color: var(--text-color); color: var(--text-light); text-align: center; padding: 20px 0; margin-top: 50px; }
+.footer { background-color: #FFFFFF; color: var(--text-color); text-align: center; padding: 20px 0; margin-top: 50px; border-top: 1px solid var(--border-color); }
 
 /* Animations */
 @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
@@ -105,16 +154,27 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .carousel-slide { width: calc((100% - 1 * 30px) / 2); } /* 2 slides visible */
+    .carousel-slide,
     .carousel-container .person-card.carousel-slide,
     .carousel-container .product-card-large.carousel-slide,
     .carousel-container .attraction-card.carousel-slide { width: calc((100% - 1 * 30px) / 2); }
-    .feature-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 3rem; }
 }
 
 @media (max-width: 768px) {
-    .nav-menu { position: fixed; left: -100%; top: 70px; flex-direction: column; background-color: var(--bg-color); width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .nav-menu { 
+        position: fixed; 
+        left: -100%; 
+        top: 70px; 
+        flex-direction: column; 
+        background-color: #fff; 
+        width: 100%; 
+        text-align: center; 
+        transition: 0.3s; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        height: calc(100vh - 70px);
+        padding-top: 1rem;
+    }
     .nav-menu.active { left: 0; }
     .nav-item { margin: 1.5rem 0; }
     .hamburger { display: block; }
@@ -123,7 +183,7 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .nav-contact { display: none; }
     .contact-grid { grid-template-columns: 1fr; }
-    .carousel-slide { width: 85%; } /* 1 slide visible with peeking */
+    .carousel-slide,
     .carousel-container .person-card.carousel-slide,
     .carousel-container .product-card-large.carousel-slide,
     .carousel-container .attraction-card.carousel-slide { width: 85%; }
