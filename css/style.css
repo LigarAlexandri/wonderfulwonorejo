@@ -109,11 +109,24 @@ body {
 .tag { background-color: var(--secondary-color); color: var(--text-light); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; display: inline-block; }
 
 /* Hero Sections */
-.hero-section { height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-align: center; position: relative; }
+.hero-section { height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-align: center; position: relative; overflow: hidden; }
 .hero-section::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1; }
 .hero-content { position: relative; z-index: 2; }
 .hero-title { font-size: 4rem; font-weight: 700; }
 .hero-subtitle { font-size: 1.5rem; margin-bottom: 30px; }
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* This is key: it places the video BEHIND your other content */
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+}
 
 .page-hero-section { padding: 80px 0; background-size: cover; background-position: center; }
 .page-hero-content {
