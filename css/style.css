@@ -51,7 +51,19 @@ body {
     margin: 0 auto; /* ADDED: To center the navbar */
     min-height: 70px; 
 }
-.nav-logo img { height: 40px; border-radius: 50%; }
+
+/* MODIFICATION START */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* This adds space between your logos */
+}
+.nav-logo img { 
+    height: 40px; 
+    /* The border-radius: 50% was removed to accommodate the non-circular kabupaten logo */
+}
+/* MODIFICATION END */
+
 .nav-menu { display: flex; justify-content: center; align-items: center; list-style: none; gap: 2rem; }
 .nav-link { text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
 .nav-link:hover, .nav-link.active { color: var(--primary-color); }
