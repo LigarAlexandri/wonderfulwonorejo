@@ -1,9 +1,9 @@
-/* Glassmorphism Theme - Clean White & Professional by Gemini */
+/* Merah Putih Theme - Clean White & Professional by Gemini */
 :root {
-    /* 1. New Color Palette for a White Background */
-    --primary-color: #1E8449; /* Professional Green */
-    --secondary-color: #2ECC71; /* Lighter Green */
-    --text-color: #34495E; /* Dark Slate Blue for text */
+    /* 1. New Color Palette for Merah Putih Theme */
+    --primary-color: #FF0000; /* Merah */
+    --secondary-color: #D32F2F; /* Merah Tua */
+    --text-color: #333333; /* Abu-abu Tua untuk teks */
     --text-light: #FFFFFF;
     --bg-color: #F8F9F9; /* Off-white for a softer look */
     --border-color: #EAEDED;
@@ -53,14 +53,14 @@ body {
 /* 5. Restyle Buttons for High Contrast */
 .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; text-align: center; }
 .btn-primary { background-color: var(--primary-color); color: var(--text-light); }
-.btn-primary:hover { background-color: #145A32; transform: translateY(-2px); }
+.btn-primary:hover { background-color: #B71C1C; transform: translateY(-2px); }
 .btn-secondary { background-color: #FFFFFF; color: var(--primary-color); border-color: var(--border-color); }
 .btn-secondary:hover { background-color: var(--border-color); transform: translateY(-2px); }
 .btn-outline { background-color: transparent; color: var(--primary-color); border-color: var(--primary-color); }
 .btn-outline:hover { background-color: var(--primary-color); color: var(--text-light); transform: translateY(-2px); }
 
 .section-padding { padding: 80px 0; }
-.section-title, .page-title { color: #2C3E50; } /* Darker title color */
+.section-title, .page-title { color: #333333; } /* Darker title color */
 .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: 700; }
 .page-title { font-size: 3rem; margin-bottom: 30px; }
 .section-header-center { text-align: center; margin-bottom: 50px; }
@@ -130,7 +130,7 @@ body {
 
 .page-hero-section { padding: 80px 0; background-size: cover; background-position: center; }
 .page-hero-content {
-    background: rgba(30, 132, 73, 0.85); /* Keep dark hero content for readability on images */
+    background: rgba(183, 28, 28, 0.85); /* Keep dark hero content for readability on images */
     padding: 40px;
     border-radius: var(--border-radius);
     color: var(--text-light);
