@@ -42,7 +42,15 @@ body {
     z-index: 1000; 
 }
 
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; min-height: 70px; }
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 20px; /* MODIFIED: Added horizontal padding */
+    max-width: 1240px; /* ADDED: To contain the elements */
+    margin: 0 auto; /* ADDED: To center the navbar */
+    min-height: 70px; 
+}
 .nav-logo img { height: 40px; border-radius: 50%; }
 .nav-menu { display: flex; justify-content: center; align-items: center; list-style: none; gap: 2rem; }
 .nav-link { text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
@@ -65,6 +73,8 @@ body {
 .page-title { font-size: 3rem; margin-bottom: 30px; }
 .section-header-center { text-align: center; margin-bottom: 50px; }
 .text-white { color: var(--text-light); } /* Use only on dark backgrounds */
+.text-center { text-align: center; }
+.cta-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
 
 /* Carousel Styles */
 .carousel-container { position: relative; }
@@ -124,13 +134,13 @@ body {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* This is key: it places the video BEHIND your other content */
-    object-fit: cover; /* Ensures the video covers the area without distortion */
+    z-index: -1;
+    object-fit: cover;
 }
 
 .page-hero-section { padding: 80px 0; background-size: cover; background-position: center; }
 .page-hero-content {
-    background: rgba(183, 28, 28, 0.85); /* Keep dark hero content for readability on images */
+    background: rgba(183, 28, 28, 0.85);
     padding: 40px;
     border-radius: var(--border-radius);
     color: var(--text-light);
@@ -139,6 +149,18 @@ body {
     text-align: center;
 }
 .page-hero-title { font-size: 2.5rem; }
+
+/* === NEW STYLES FOR PRODUCT/STORY PAGES === */
+.story-grid, .product-detail-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
+.story-grid { align-items: center; }
+.story-image img, .product-detail-image img { width: 100%; height: auto; object-fit: cover; border-radius: var(--border-radius); }
+.product-detail-info ul { list-style-position: inside; padding-left: 0; margin-top: 20px; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.testimonial-card { background-color: var(--bg-light); padding: 20px; border-radius: var(--border-radius); border-left: 4px solid var(--primary-color); }
+.faq-accordion .faq-item { border-bottom: 1px solid var(--border-color); }
+.faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+/* ========================================= */
 
 /* Contact Page */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
@@ -202,4 +224,6 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
     .carousel-container .attraction-card.carousel-slide { width: 85%; }
     .carousel-button.prev { left: -15px; }
     .carousel-button.next { right: -15px; }
+
+    .story-grid, .product-detail-grid, .testimonial-grid { grid-template-columns: 1fr; }
 }
