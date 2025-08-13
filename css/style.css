@@ -162,6 +162,27 @@ body {
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
 /* ========================================= */
 
+/* Literature Section */
+.literature-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: justify;
+    line-height: 1.8;
+    box-shadow: var(--shadow);
+}
+
+.literature-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.literature-content p {
+    margin-bottom: 1.5em;
+}
+
 /* Contact Page */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
 .lets-talk-card, .contact-info-block {
