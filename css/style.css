@@ -260,3 +260,10 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
 
     .story-grid, .product-detail-grid, .testimonial-grid { grid-template-columns: 1fr; }
 }
+
+/* Grid View */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
