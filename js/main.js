@@ -6,12 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', e => {
             const url = new URL(link.href, window.location.origin);
             const currentUrl = new URL(window.location.href);
-            if (url.href === currentUrl.href) { e.preventDefault(); return; }
+            // Prevent transition if it's the same page
+            if (url.href === currentUrl.href) { 
+                e.preventDefault(); 
+                return; 
+            }
             e.preventDefault();
             document.body.classList.add('page-is-leaving');
             setTimeout(() => { window.location.href = link.href; }, 500);
         });
     });
+
+    // --- [FIX] Back/Forward Cache Handling ---
+    // This ensures that if a page is restored from the browser's cache (after clicking back/forward),
+    // the 'page-is-leaving' class is removed so the content is visible.
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            document.body.classList.remove('page-is-leaving');
+        }
+    });
+
 
     // --- Mobile Navigation (Hamburger Menu) ---
     const hamburger = document.querySelector(".hamburger");
