@@ -267,3 +267,7 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
+
+.section-title-link {
+    text-decoration: none;
+}
