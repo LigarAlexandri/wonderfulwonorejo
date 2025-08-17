@@ -172,6 +172,9 @@ body {
 .faq-accordion .faq-item { border-bottom: 1px solid var(--border-color); }
 .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.story-content p {
+    text-align: justify;
+}
 /* ========================================= */
 
 /* Literature Section */
@@ -270,4 +273,18 @@ body.page-is-leaving { animation: fadeOutPage 0.5s ease-in-out forwards; }
 
 .section-title-link {
     text-decoration: none;
+}
+
+.story-grid {
+        grid-template-columns: 1fr; /* Stack menjadi 1 kolom */
+        gap: 30px; /* Mengurangi jarak antar elemen */
+    }
+
+    /* Mengatur ulang urutan elemen agar gambar selalu di atas teks pada mobile */
+    .story-grid .story-content {
+        order: 2;
+    }
+    .story-grid .story-image {
+        order: 1;
+    }
 }
